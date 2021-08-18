@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"serendipity-hzh.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="“AJAX相关内容（可更新。🤐”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX相关内容">
+<meta property="og:url" content="https://serendipity-hzh.github.io/2021/08/18/AJAX%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/index.html">
+<meta property="og:site_name" content="好久没读诗了啊">
+<meta property="og:description" content="“AJAX相关内容（可更新。🤐”">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-18T04:31:51.000Z">
+<meta property="article:modified_time" content="2021-08-18T04:33:46.649Z">
+<meta property="article:author" content="Serendipity">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="AJAX">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://serendipity-hzh.github.io/2021/08/18/AJAX%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>AJAX相关内容 | 好久没读诗了啊</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9389b20efe82958d8ae5d327f5ea6eef";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="好久没读诗了啊" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">好久没读诗了啊</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">昼眠听风，夜坐听雨</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://serendipity-hzh.github.io/2021/08/18/AJAX%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Serendipity">
+      <meta itemprop="description" content="生于尘埃 溺于人海 死于理想高台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好久没读诗了啊">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AJAX相关内容
+        </h1>
+
+        <div class="post-meta">
+        
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-18 12:31:51 / 修改时间：12:33:46" itemprop="dateCreated datePublished" datetime="2021-08-18T12:31:51+08:00">2021-08-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>“AJAX相关内容（可更新。🤐”</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<a id="more"></a>
+
+<h2 id="Ajax-相关内容："><a href="#Ajax-相关内容：" class="headerlink" title="Ajax 相关内容："></a>Ajax 相关内容：</h2><h3 id="1-1、-什么是Ajax？"><a href="#1-1、-什么是Ajax？" class="headerlink" title="1.1、 什么是Ajax？"></a>1.1、 什么是Ajax？</h3><p>AJAX 即<strong>“Asynchronous Javascript And XML”</strong>（异步JavaScript XML），是指一种创建交互式网页应用的网页开发技术。</p>
+<p>AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。</p>
+<p>XML 现在大都使用的是Json 。</p>
+<h3 id="1-2、JavaScript原生的Ajax-请求示例："><a href="#1-2、JavaScript原生的Ajax-请求示例：" class="headerlink" title="1.2、JavaScript原生的Ajax 请求示例："></a>1.2、JavaScript原生的Ajax 请求示例：</h3><p><strong>原生的Ajax 请求</strong>：</p>
+<ol>
+<li>首先要创建XMLHttpRequest 对象</li>
+<li>调用open 方法设置请求参数</li>
+<li>调用send 方法发送请求</li>
+<li>在send 方法前绑定onreadystatechange 事件，处理请求完成后的操作。</li>
+</ol>
+<h4 id="相关代码"><a href="#相关代码" class="headerlink" title="相关代码"></a>相关代码</h4><p>创建一个html 页面，发起请求。代码如下：</p>
+<p><code>ajax.html</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Ajax 原生内容<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 在这里使用javaScript语言发起Ajax请求，访问服务器AjaxServlet中javaScriptAjax</span></span></span><br><span class="line"><span class="actionscript">        <span class="function"><span class="keyword">function</span> <span class="title">ajaxRequest</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//1、我们首先要创建XMLHttpRequest</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> xmlHttpRequest = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//2、调用open方法设置请求参数</span></span></span><br><span class="line"><span class="actionscript">            xmlHttpRequest.open(<span class="string">"Get"</span>, <span class="string">"http://localhost:8989/AjaxServlet?action=javaScriptAjax"</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//4、在send方法前绑定onreadystatechange事件，处理请求完成后的操作。</span></span></span><br><span class="line"><span class="actionscript">            xmlHttpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">                if (xmlHttpRequest.readyState === 4 &amp;&amp; xmlHttpRequest.status === 200) &#123;</span><br><span class="line"><span class="actionscript">                    alert(<span class="string">"收到服务器返回的数据："</span> + xmlHttpRequest.responseText);</span></span><br><span class="line"><span class="actionscript">                  	<span class="comment">//转换为json 对象： 调用属性值进行格式化输出</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(xmlHttpRequest.responseText);</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">// 把响应的数据显示在页面上 JavaScript填充：</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">document</span>.getElementById(<span class="string">"div01"</span>).innerHTML = <span class="string">"编号："</span> + jsonObj.id + <span class="string">" , 姓名："</span> + jsonObj.name;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="comment">//3、调用send方法发送请求</span></span></span><br><span class="line">            xmlHttpRequest.send();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"ajaxRequest()"</span>&gt;</span>ajaxRequest<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div01"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一个<code>AjaxServlet</code> 程序接收请求：</p>
+<p><code>BaseSevlet,java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 解决post请求中文乱码问题</span></span><br><span class="line">        <span class="comment">// 一定要在获取请求参数之前调用才有效</span></span><br><span class="line">        req.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        <span class="comment">// 解决响应中文乱码：</span></span><br><span class="line">        resp.setContentType(<span class="string">"text/html; charset=UTF-8"</span>);</span><br><span class="line">        String action = req.getParameter(<span class="string">"action"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取action业务鉴别字符串，获取相应的业务 方法反射对象</span></span><br><span class="line">            Method declaredMethod = <span class="keyword">this</span>.getClass().getDeclaredMethod(action, HttpServletRequest<span class="class">.<span class="keyword">class</span>, <span class="title">HttpServletResponse</span>.<span class="title">class</span>)</span>;</span><br><span class="line">            <span class="comment">//System.out.println(method);</span></span><br><span class="line">            <span class="comment">// 调用目标业务 方法</span></span><br><span class="line">            declaredMethod.invoke(<span class="keyword">this</span>, req, resp);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);<span class="comment">// 把异常抛给Filter过滤器</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>AjaxServlet.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/AjaxServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AjaxServlet</span> <span class="keyword">extends</span> <span class="title">BaseServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">javaScriptAjax</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Ajax请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// json格式的字符串</span></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-JQuery-的Ajax-请求"><a href="#1-3-JQuery-的Ajax-请求" class="headerlink" title="1.3 JQuery 的Ajax 请求"></a>1.3 JQuery 的Ajax 请求</h3><blockquote>
+<h3 id="编写原生的JavaScript-我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。"><a href="#编写原生的JavaScript-我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。" class="headerlink" title="编写原生的JavaScript 我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。"></a>编写原生的JavaScript 我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。</h3><p>一般会使用JavaScript 的框架来解决这个问题，比如说我们前面学到的Jquery 框架。它就有很好的Ajax 解决方案。</p>
+<p><a href="http://hemin.cn/jq/jQuery.ajax.html" target="_blank" rel="noopener">在线文档：</a> 相关内容的查看</p>
+</blockquote>
+<h5 id="1-3-1四个Ajax-请求方法："><a href="#1-3-1四个Ajax-请求方法：" class="headerlink" title="1.3.1四个Ajax 请求方法："></a>1.3.1四个Ajax 请求方法：</h5><ul>
+<li>$.ajax 方法</li>
+<li>$.get 方法</li>
+<li>$.post 方法</li>
+<li>$.getJSON 方法</li>
+</ul>
+<p>一个表单序列化方法：serialize()表单序列化方法</p>
+<p><strong>在JQuery 中和Ajax 请求有关的方法有四个</strong></p>
+<p><code>$.ajax 请求参数：</code> <a href="http://hemin.cn/jq/jQuery.ajax.html" target="_blank" rel="noopener">文档</a></p>
+<p>请求：向服务端传去！</p>
+<ul>
+<li><p>url： 请求的地址</p>
+</li>
+<li><p>type : 请求的方式get 或post</p>
+</li>
+<li><p>data : 请求的参数string 或json</p>
+<p>格式有两种：待发送 Key/value 参数。</p>
+<p>一、name=vlaue&amp;name=value</p>
+<p>二、{key:value}: ‘name’: name, </p>
+<p>前面的参数包裹引号包裹不做要求 传给服务端的参数。</p>
+</li>
+<li><p>success: 请求成功的回调函数 msg :由服务器返回，并根据dataType参数进行处理后的数据；描述状态的字符串。自动完成的对应Write</p>
+</li>
+<li><p>dataType: 处理服务器返回的数据类型，常用json 、text、 xml    </p>
+</li>
+</ul>
+<blockquote>
+<p>注意点： 在 success 成功回调函数必须增加 msg 参数！ 这个参数就是服务器返回的数据 就不像以前以 <code>xmlHttprequest.responseText</code> 那样了！</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">           url: <span class="string">"http://localhost:8989/AjaxServlet"</span>,</span><br><span class="line">            <span class="comment">//data: "action=jQueryAjax"</span></span><br><span class="line">            data: &#123;</span><br><span class="line">            <span class="comment">//data 传给服务端的参数：</span></span><br><span class="line">            <span class="string">'action'</span>: <span class="string">"jQueryAjax"</span>,<span class="comment">//前面的参数包裹引号包裹不做要求；</span></span><br><span class="line">            &#125;,</span><br><span class="line">            type: <span class="string">"GET"</span>,</span><br><span class="line">            dataType: <span class="string">"json"</span>, <span class="comment">// 如果是text 则需要 var jasonObj = JSON.parse(data) 继而调用</span></span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123; <span class="comment">// 参数时msg 默认接收返回来的数据：write（msg）</span></span><br><span class="line">             	 alert(<span class="string">"服务器返回来的数据是："</span> + data);</span><br><span class="line">                $(<span class="string">"#msg"</span>).html(<span class="string">"ajax 编号"</span> + data.id + <span class="string">",姓名："</span> + data.name);</span><br><span class="line">             &#125;</span><br><span class="line">  		&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>下面的方法必须遵守参数的顺序： 在写的时候不要再写参数名字了</p>
+</blockquote>
+<p><code>$.get 请求和$.post 请求</code>通过远程 HTTP POST/GET 请求载入信息。</p>
+<ul>
+<li><strong>url</strong>:待载入页面的URL地址</li>
+<li><strong>data</strong>:待发送 Key/value 参数。</li>
+<li><strong>callback</strong>:载入成功时回调函数。</li>
+<li><strong>type</strong>:返回内容格式，xml, html, script, json, text, _default。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求 test.php 网页，忽略返回值。</span></span><br><span class="line">$.<span class="keyword">get</span>("test.php");</span><br><span class="line">//请求 test.php 网页，传送2个参数，忽略返回值。</span><br><span class="line">$.<span class="keyword">get</span>("test.php", &#123; name: <span class="string">"John"</span>, <span class="attr">time</span>: <span class="string">"2pm"</span> &#125; );</span><br><span class="line">显示 test.php 返回值(HTML 或 XML，取决于返回值)。</span><br><span class="line">$.<span class="keyword">get</span>("test.php", function(data)&#123;</span><br><span class="line">  alert(<span class="string">"Data Loaded: "</span> + data);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//显示 test.cgi 返回值(HTML 或 XML，取决于返回值)，添加一组请求参数。</span></span><br><span class="line">$.<span class="keyword">get</span>("test.cgi", &#123; name: <span class="string">"John"</span>, <span class="attr">time</span>: <span class="string">"2pm"</span> &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"Data Loaded: "</span> + data);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>$.getJSON</code>通过 HTTP GET 请求载入 JSON 数据。</p>
+<ul>
+<li>url:待载入页面的URL 地址</li>
+<li>data:待发送Key/value 参数</li>
+<li>callback:载入成功时回调函数。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.getJSON(<span class="string">"http://localhost:8989/AjaxServlet"</span>, <span class="string">"action=jQuerySerialize&amp;"</span> + $(<span class="string">"#form01"</span>).serialize(), <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#msg"</span>).html(<span class="string">" Serialize 编号："</span> + data.id + <span class="string">" , 姓名："</span> + data.name);</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>表单的序列化:</strong> serialize: 连载</p>
+<blockquote>
+<p>serialize() 方法可以把一个form 表单中所有的表单项。都以字符串name=value&amp;name=value 的形式进行拼接，省去我们很多不必要的工作。由</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"results"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Results: <span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"single"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Single<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Single2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"multiple"</span> <span class="attr">multiple</span>=<span class="string">"multiple"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>Multiple<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>Multiple2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>Multiple3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"check"</span> <span class="attr">value</span>=<span class="string">"check1"</span>/&gt;</span> check1</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"check"</span> <span class="attr">value</span>=<span class="string">"check2"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span> check2</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"radio1"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span> radio1</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"radio2"</span>/&gt;</span> radio2</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">$(<span class="string">"#results"</span>).append( <span class="string">"&lt;tt&gt;"</span> + $(<span class="string">"form"</span>).serialize() + <span class="string">"&lt;/tt&gt;"</span> );</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="相关代码："><a href="#相关代码：" class="headerlink" title="相关代码："></a>相关代码：</h4><p><code>ajaxJQuery.html</code> 客户端请求：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>AjaxJQuery Request<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"../script/jquery-3.6.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//ajax 请求：</span></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#ajaxBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $.ajax(&#123;</span></span><br><span class="line"><span class="actionscript">                    url: <span class="string">"http://localhost:8989/AjaxServlet"</span>,</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//data: "action=jQueryAjax"</span></span></span><br><span class="line">                    data: &#123;</span><br><span class="line"><span class="actionscript">                        <span class="comment">//data 传给服务端的参数：</span></span></span><br><span class="line"><span class="actionscript">                        <span class="string">'action'</span>: <span class="string">"jQueryAjax"</span>,<span class="comment">//前面的参数包裹引号包裹不做要求；</span></span></span><br><span class="line">                    &#125;,</span><br><span class="line"><span class="actionscript">                    type: <span class="string">"GET"</span>,</span></span><br><span class="line"><span class="actionscript">                    dataType: <span class="string">"json"</span>, <span class="comment">// 如果是text 则需要 var jasonObj = JSON.parse(data) 继而调用</span></span></span><br><span class="line"><span class="actionscript">                    success: <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>&#123; <span class="comment">// 参数时msg 默认接收返回来的数据：write（msg）</span></span></span><br><span class="line"><span class="actionscript">                        <span class="comment">//alert("服务器返回来的数据是：" + data);</span></span></span><br><span class="line"><span class="javascript">                        $(<span class="string">"#msg"</span>).html(<span class="string">"ajax 编号"</span> + data.id + <span class="string">",姓名："</span> + data.name);</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="actionscript">            <span class="comment">// ajax--get请求</span></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#getBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">                $.get(<span class="string">"http://localhost:8989/AjaxServlet"</span>, <span class="string">"action=jQueryGet"</span>, <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    $(<span class="string">"#msg"</span>).html(<span class="string">" get 编号："</span> + data.id + <span class="string">" , 姓名："</span> + data.name);</span></span><br><span class="line"><span class="actionscript">                &#125;, <span class="string">"json"</span>);</span></span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="actionscript">            <span class="comment">// ajax--Post请求</span></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#postBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">                $.post(<span class="string">"http://localhost:8989/AjaxServlet"</span>, <span class="string">"action=jQueryPost"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    $(<span class="string">"#msg"</span>).html(<span class="string">" get 编号："</span> + data.id + <span class="string">" , 姓名："</span> + data.name);</span></span><br><span class="line"><span class="actionscript">                &#125;, <span class="string">"json"</span>);</span></span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="actionscript">            <span class="comment">// ajax--getJson请求</span></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#getJSONBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $.getJSON(<span class="string">"http://localhost:8989/AjaxServlet"</span>, <span class="string">"action=jQueryGetJSON"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    $(<span class="string">"#msg"</span>).html(<span class="string">" getJSON 编号："</span> + data.id + <span class="string">" , 姓名："</span> + data.name);</span></span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="actionscript">            <span class="comment">// ajax请求</span></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#submit"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">// 把参数序列化</span></span></span><br><span class="line"><span class="actionscript">                <span class="comment">//alert($("#form01").serialize()); //呈现内容：</span></span></span><br><span class="line"><span class="actionscript">                <span class="comment">//直接添加注意jQuerySerialize &amp; 参数后面的连字符 &amp;</span></span></span><br><span class="line"><span class="javascript">                $.getJSON(<span class="string">"http://localhost:8989/AjaxServlet"</span>, <span class="string">"action=jQuerySerialize&amp;"</span> + $(<span class="string">"#form01"</span>).serialize(), <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    $(<span class="string">"#msg"</span>).html(<span class="string">" Serialize 编号："</span> + data.id + <span class="string">" , 姓名："</span> + data.name);</span></span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"ajaxBtn"</span>&gt;</span>$.ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"getBtn"</span>&gt;</span>$.get请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"postBtn"</span>&gt;</span>$.post请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"getJSONBtn"</span>&gt;</span>$.getJSON请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--呈现服务端传过来的数据内容：--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"form01"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        用户名：</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        密码：</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">type</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        下拉单选：</span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"single"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Single"</span>&gt;</span>Single<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Single2"</span>&gt;</span>Single2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        下拉多选：</span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"multiple"</span> <span class="attr">multiple</span>=<span class="string">"multiple"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">"selected"</span> <span class="attr">value</span>=<span class="string">"Multiple"</span>&gt;</span>Multiple<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Multiple2"</span>&gt;</span>Multiple2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">"selected"</span> <span class="attr">value</span>=<span class="string">"Multiple3"</span>&gt;</span>Multiple3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        复选：</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"check"</span> <span class="attr">value</span>=<span class="string">"check1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span> check1</span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        check1</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"check"</span> <span class="attr">value</span>=<span class="string">"check2"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span> check2<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        单选：</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"radio1"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span> radio1</span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        radio1</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"radio2"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span> radio2<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"submit"</span>&gt;</span>提交--serialize()<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>AjaxServlet.java</code> 服务端代码：继承自上文<code>BaseServlet.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.javaweb.ajax;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> demo.javaweb.json.Person;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/AjaxServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AjaxServlet</span> <span class="keyword">extends</span> <span class="title">BaseServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">javaScriptAjax</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//控制台进行相关内容的输出</span></span><br><span class="line">        System.out.println(<span class="string">"javaScriptAjax请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// json格式的字符串</span></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">jQueryAjax</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"jQueryAjax请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">jQueryGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"jQueryGet请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">jQueryPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"jQueryPost请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">jQueryGetJson</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"jQueryGetJson请求过来了"</span>);</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">jQuerySerialize</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//检验是否传过来参数了！</span></span><br><span class="line">        String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        <span class="comment">//String password = req.getParameter("password");</span></span><br><span class="line">        <span class="comment">//System.out.println(username+password);</span></span><br><span class="line">        System.out.println(<span class="string">"jQuerySerialize请求过来了"</span>);</span><br><span class="line">        <span class="comment">//借用Person 实体类进行简单的应用：</span></span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, username);</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        resp.getWriter().write(personJsonString);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Serendipity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://serendipity-hzh.github.io/2021/08/18/AJAX%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="AJAX相关内容">https://serendipity-hzh.github.io/2021/08/18/AJAX相关内容/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/JAVA/" rel="tag"><i class="fa fa-tag"></i> JAVA</a>
+              <a href="/tags/AJAX/" rel="tag"><i class="fa fa-tag"></i> AJAX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/18/JSON%E7%9B%B8%E5%85%B3/" rel="prev" title="JSON相关内容">
+      <i class="fa fa-chevron-left"></i> JSON相关内容
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-相关内容："><span class="nav-number">1.</span> <span class="nav-text">Ajax 相关内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、-什么是Ajax？"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、 什么是Ajax？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、JavaScript原生的Ajax-请求示例："><span class="nav-number">1.2.</span> <span class="nav-text">1.2、JavaScript原生的Ajax 请求示例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相关代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">相关代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-JQuery-的Ajax-请求"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 JQuery 的Ajax 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写原生的JavaScript-我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。"><span class="nav-number">1.4.</span> <span class="nav-text">编写原生的JavaScript 我们自己要写很多的代码。而且还要考虑浏览器兼容问题。所以使用起来非常的不方便。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-1四个Ajax-请求方法："><span class="nav-number">1.4.0.1.</span> <span class="nav-text">1.3.1四个Ajax 请求方法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关代码："><span class="nav-number">1.4.1.</span> <span class="nav-text">相关代码：</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Serendipity"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Serendipity</p>
+  <div class="site-description" itemprop="description">生于尘埃 溺于人海 死于理想高台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:TherCamus@gmail.com" title="E-Mail → mailto:TherCamus@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Captain Huo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">10k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">9 分钟</span>
+</div>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">本站总访问量：<span id="busuanzi_value_site_pv"></span></span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">有<span id="busuanzi_value_site_uv"></span>位小伙伴来过😊</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }      	
+});
+</script> 
+
+<br />
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='135,135,135' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
+

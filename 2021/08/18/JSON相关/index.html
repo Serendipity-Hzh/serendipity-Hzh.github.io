@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"serendipity-hzh.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="“JSON相关内容（可更新。🤐”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON相关内容">
+<meta property="og:url" content="https://serendipity-hzh.github.io/2021/08/18/JSON%E7%9B%B8%E5%85%B3/index.html">
+<meta property="og:site_name" content="好久没读诗了啊">
+<meta property="og:description" content="“JSON相关内容（可更新。🤐”">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-18T04:24:41.000Z">
+<meta property="article:modified_time" content="2021-08-18T04:30:42.631Z">
+<meta property="article:author" content="Serendipity">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="JSON">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://serendipity-hzh.github.io/2021/08/18/JSON%E7%9B%B8%E5%85%B3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JSON相关内容 | 好久没读诗了啊</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9389b20efe82958d8ae5d327f5ea6eef";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="好久没读诗了啊" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">好久没读诗了啊</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">昼眠听风，夜坐听雨</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://serendipity-hzh.github.io/2021/08/18/JSON%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Serendipity">
+      <meta itemprop="description" content="生于尘埃 溺于人海 死于理想高台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好久没读诗了啊">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JSON相关内容
+        </h1>
+
+        <div class="post-meta">
+        
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-18 12:24:41 / 修改时间：12:30:42" itemprop="dateCreated datePublished" datetime="2021-08-18T12:24:41+08:00">2021-08-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>804</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>“JSON相关内容（可更新。🤐”</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<a id="more"></a>
+
+<h2 id="JSON相关："><a href="#JSON相关：" class="headerlink" title="JSON相关："></a>JSON相关：</h2><h3 id="1-1、什么是JSON"><a href="#1-1、什么是JSON" class="headerlink" title="1.1、什么是JSON"></a>1.1、什么是JSON</h3><p><code>JSON (JavaScript Object Notation)</code> 是一种轻量级的<strong>数据交换格式</strong>。易于人阅读和编写。同时也易于机器解析和生成。它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999 的一个子集。JSON 采用完全独立于语言的文本格式，但是也使用了类似于C 语言家族的习惯（包括C, C++, C#, Java,JavaScript, Perl, Python 等）。这些特性使JSON 成为理想的数据交换语言。</p>
+<h3 id="1-2、JSON-对象定义和基本使用"><a href="#1-2、JSON-对象定义和基本使用" class="headerlink" title="1.2、JSON 对象定义和基本使用"></a>1.2、JSON 对象定义和基本使用</h3><p>在标准的json 格式中，json 对象由在括号括起来，对象中的属性也就是json 的<strong>key</strong> 是一个字符串，所以一定要使用<strong>双引号</strong>引起来。每组key 之间使用逗号进行分隔。</p>
+<h4 id="1-2-1、JSON-的定义"><a href="#1-2-1、JSON-的定义" class="headerlink" title="1.2.1、JSON 的定义"></a>1.2.1、JSON 的定义</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Json 定义格式：</span><br><span class="line">      var 变量名= &#123;</span><br><span class="line">      “key” : value , // Number 类型</span><br><span class="line">      “key2” : “value” , // 字符串类型</span><br><span class="line">      “key3” : [] , // 数组类型</span><br><span class="line">      “key4” : &#123;&#125;, // json 对象类型</span><br><span class="line">      “key5” : [&#123;&#125;,&#123;&#125;] // json 数组</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>实例:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var jsonObj = &#123;</span><br><span class="line">            "key1": 12,// Number</span><br><span class="line">            "key2": "abc",// 字符串类型</span><br><span class="line">            "key3": true,//boolen 类型</span><br><span class="line">            "key4": [11, "arr", false], //数组</span><br><span class="line">            "key5": &#123;</span><br><span class="line">                "key5_1": 551,</span><br><span class="line">                "key5_2": "key5_2_value" //json 类型</span><br><span class="line">            &#125;,</span><br><span class="line">            "key6": [&#123;</span><br><span class="line">                "key6_1_1": 6611,</span><br><span class="line">                "key6_1_2": "key6_1_2_value"</span><br><span class="line">            &#125;, &#123;</span><br><span class="line">                "key6_2_1": 6621,</span><br><span class="line">                "key6_2_2": "key6_2_2_value"</span><br><span class="line">            &#125;] //json 数组</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2、JSON-对象的访问"><a href="#1-2-2、JSON-对象的访问" class="headerlink" title="1.2.2、JSON 对象的访问"></a>1.2.2、JSON 对象的访问</h4><blockquote>
+<p>json 对象，顾名思义，就知道它是一个对象。里面的key 就是对象的属性。我们要访问一个对象的属性，只需要使用【对象名.属性名】的方式访问即可。</p>
+</blockquote>
+<p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="keyword">typeof</span>(jsonObj));<span class="comment">// object  json就是一个对象</span></span><br><span class="line">alert(jsonObj.key1); <span class="comment">//12</span></span><br><span class="line">alert(jsonObj.key2); <span class="comment">// abc</span></span><br><span class="line">alert(jsonObj.key3); <span class="comment">// true</span></span><br><span class="line">alert(jsonObj.key4);<span class="comment">// 得到数组[11,"arr",false]</span></span><br><span class="line"> <span class="comment">// json 中 数组值的遍历</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObj.key4.length; i++) &#123;</span><br><span class="line">	alert(jsonObj.key4[i]);</span><br><span class="line">&#125;</span><br><span class="line">alert(jsonObj.key5.key5_1);<span class="comment">//551</span></span><br><span class="line">alert(jsonObj.key5.key5_2);<span class="comment">//key5_2_value</span></span><br><span class="line">alert(jsonObj.key6 );<span class="comment">// 得到json数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 取出来每一个元素都是json对象</span></span><br><span class="line"><span class="keyword">var</span> jsonItem = jsonObj.key6[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// alert( jsonItem.key6_1_1 ); //6611</span></span><br><span class="line">alert( jsonItem.key6_1_2 ); <span class="comment">//key6_1_2_value</span></span><br><span class="line"></span><br><span class="line">alert(jsonObj);</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-3、JSON-中两个常用的方法。"><a href="#1-2-3、JSON-中两个常用的方法。" class="headerlink" title="1.2.3、JSON 中两个常用的方法。"></a>1.2.3、JSON 中两个常用的方法。</h4><p>JSON 对象和字符串对象的互转:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify( json ); 此方法可以把一个json 对象转换成为json 字符串</span><br><span class="line"><span class="built_in">JSON</span>.parse( jsonString ); 此方法可以把一个json 字符串转换成为json 对象</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把json对象转换成为 json字符串</span></span><br><span class="line">			<span class="keyword">var</span> jsonObjString = <span class="built_in">JSON</span>.stringify(jsonObj); <span class="comment">// 特别像 Java中对象的toString</span></span><br><span class="line">			alert(jsonObjString)</span><br><span class="line">			<span class="comment">// 把json字符串。转换成为json对象</span></span><br><span class="line">			<span class="keyword">var</span> jsonObj2 = <span class="built_in">JSON</span>.parse(jsonObjString);</span><br><span class="line">			alert(jsonObj2.key1);<span class="comment">// 12</span></span><br><span class="line">			alert(jsonObj2.key2);<span class="comment">// abc</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// json的访问</span></span><br><span class="line">			<span class="comment">// json对象转字符串</span></span><br><span class="line">			<span class="comment">// json字符串转json对象</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4、☆JSON-在java-中的使用"><a href="#1-4、☆JSON-在java-中的使用" class="headerlink" title="1.4、☆JSON 在java 中的使用"></a>1.4、☆JSON 在java 中的使用</h3><blockquote>
+<p><code>Gson</code> 是Google 提供的用来在Java 对象和JSON 数据之间进行映射的Java 类库。可以将一个JSON 字符串转成一个Java 对象，或者反过来。</p>
+<p><strong>需要添加jar 包 构建路径。</strong></p>
+</blockquote>
+<p><strong>json 在java 中的操作，常见的有三种情况。</strong></p>
+<ol>
+<li>java 对象和json 的转换</li>
+<li>java 对象list 集合和json 的转换</li>
+<li>java  对象map 和json 的转换</li>
+</ol>
+<blockquote>
+<p>转成JSON 都是相似的做法；只是List和Map 转回来的时候复杂点。</p>
+</blockquote>
+<p>相关代码：</p>
+<p><code>Person.java</code> JavaBean 类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.javaweb.json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(Integer id, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>PersonListType.java</code> ArrayList 转换中辅助类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.javaweb.json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.reflect.TypeToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonListType</span> <span class="keyword">extends</span> <span class="title">TypeToken</span>&lt;<span class="title">ArrayList</span>&lt;<span class="title">Person</span>&gt;&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//继承的时候可以写：ArrayList 或者写父类List</span></span><br><span class="line">    <span class="comment">//使用匿名内部类进行替代 也可以实现的！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>JsonTest.java</code>: 主要内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.javaweb.json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> com.google.gson.reflect.TypeToken;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">//javaBean和json的互转</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//java bean 实例：</span></span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"张三"</span>);</span><br><span class="line">        <span class="comment">// 创建Gson对象实例：谷歌提供的json 转换jar包</span></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        <span class="comment">//toJson方法可以把java对象转换成为json字符串</span></span><br><span class="line">        String personJsonString = gson.toJson(person);</span><br><span class="line">        System.out.println(personJsonString);<span class="comment">//&#123;"id":1,"name":"张三"&#125;</span></span><br><span class="line">        <span class="comment">// fromJson把json字符串转换回Java对象</span></span><br><span class="line">        <span class="comment">// 第一个参数是json字符串</span></span><br><span class="line">        <span class="comment">// 第二个参数是转换回去的Java对象类型：反射中获得类对象的方法</span></span><br><span class="line">        Person person1 = gson.fromJson(personJsonString, Person<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        System.out.println(person1);<span class="comment">//输出 默认调用toString 方法</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//List 和json的互转</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;Person&gt; personList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        personList.add(<span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"person01"</span>));</span><br><span class="line">        personList.add(<span class="keyword">new</span> Person(<span class="number">2</span>, <span class="string">"person02"</span>));</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//// 把List转换为json字符串</span></span><br><span class="line">        String personListJsonString = gson.toJson(personList);</span><br><span class="line">        System.out.println(personListJsonString);<span class="comment">//[&#123;"id":1,"name":"person01"&#125;,&#123;"id":2,"name":"person02"&#125;]</span></span><br><span class="line">        <span class="comment">// 第二个参数 传入：personList.getClass（） 是不可以的</span></span><br><span class="line">        <span class="comment">//必须是type 类型：gon jar 包下的reflect TypeToken</span></span><br><span class="line">        <span class="comment">//需要重新的新建类 继而继承TypeToken</span></span><br><span class="line">        <span class="comment">//List&lt;Person&gt; list = gson.fromJson(personListJsonString, new PersonListType().getType());</span></span><br><span class="line">        <span class="comment">// 匿名内部类的内容：gson.fromJson()  参数如下：</span></span><br><span class="line">        <span class="comment">//fromJson(String json, Class&lt;T&gt; classOfT) :</span></span><br><span class="line">        <span class="comment">//fromJson(String json, Type typeOfT)</span></span><br><span class="line">        List&lt;Person&gt; list = gson.fromJson(personListJsonString, <span class="keyword">new</span> TypeToken&lt;ArrayList&lt;Person&gt;&gt;() &#123;</span><br><span class="line">        &#125;.getType());</span><br><span class="line"></span><br><span class="line">        System.out.println(list);<span class="comment">//[Person&#123;id=1, name='person01'&#125;, Person&#123;id=2, name='person02'&#125;]</span></span><br><span class="line">        Person person = list.get(<span class="number">0</span>);</span><br><span class="line">        System.out.println(person);<span class="comment">//Person&#123;id=1, name='person01'&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//map 和json的互转</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Person&gt; personMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        personMap.put(<span class="number">1</span>, <span class="keyword">new</span> Person(<span class="number">1</span>, <span class="string">"person01"</span>));</span><br><span class="line">        personMap.put(<span class="number">2</span>, <span class="keyword">new</span> Person(<span class="number">2</span>, <span class="string">"person02"</span>));</span><br><span class="line"></span><br><span class="line">        Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        <span class="comment">// 把 map 集合转换成为 json字符串</span></span><br><span class="line">        String personMapJsonString = gson.toJson(personMap);</span><br><span class="line">        System.out.println(personMapJsonString);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Map&lt;Integer,Person&gt; personMap2 = gson.fromJson(personMapJsonString, new PersonMapType().getType());</span></span><br><span class="line">      	<span class="comment">//使用内部匿名类进行实操:TypeToken&lt;&gt;() &#123;&#125;</span></span><br><span class="line">        Map&lt;Integer, Person&gt; personMap2 = gson.fromJson(personMapJsonString, <span class="keyword">new</span> TypeToken&lt;HashMap&lt;Integer, Person&gt;&gt;() &#123;</span><br><span class="line">        &#125;.getType());</span><br><span class="line"></span><br><span class="line">        System.out.println(personMap2);</span><br><span class="line">        Person p = personMap2.get(<span class="number">1</span>);</span><br><span class="line">        System.out.println(p);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Serendipity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://serendipity-hzh.github.io/2021/08/18/JSON%E7%9B%B8%E5%85%B3/" title="JSON相关内容">https://serendipity-hzh.github.io/2021/08/18/JSON相关/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/JAVA/" rel="tag"><i class="fa fa-tag"></i> JAVA</a>
+              <a href="/tags/JSON/" rel="tag"><i class="fa fa-tag"></i> JSON</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/15/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84%E7%9B%B8%E5%85%B3/" rel="prev" title="Java注解和反射相关">
+      <i class="fa fa-chevron-left"></i> Java注解和反射相关
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/18/AJAX%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" rel="next" title="AJAX相关内容">
+      AJAX相关内容 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON相关："><span class="nav-number">1.</span> <span class="nav-text">JSON相关：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、什么是JSON"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、什么是JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、JSON-对象定义和基本使用"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、JSON 对象定义和基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1、JSON-的定义"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1、JSON 的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2、JSON-对象的访问"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2、JSON 对象的访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3、JSON-中两个常用的方法。"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3、JSON 中两个常用的方法。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4、☆JSON-在java-中的使用"><span class="nav-number">1.3.</span> <span class="nav-text">1.4、☆JSON 在java 中的使用</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Serendipity"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Serendipity</p>
+  <div class="site-description" itemprop="description">生于尘埃 溺于人海 死于理想高台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:TherCamus@gmail.com" title="E-Mail → mailto:TherCamus@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Captain Huo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">10k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">9 分钟</span>
+</div>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">本站总访问量：<span id="busuanzi_value_site_pv"></span></span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">有<span id="busuanzi_value_site_uv"></span>位小伙伴来过😊</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }      	
+});
+</script> 
+
+<br />
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='135,135,135' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
+
